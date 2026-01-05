@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the references below."
+
+title: "ML Bioacoustics Signal Processing"
+version: "0.1.0"
+date-released: 2026-01-01
+license: MIT
+
+authors:
+  - family-names: Babalola
+    given-names: Oluwaseyi Paul
+    affiliation: "Cape Peninsula University of Technology"
+    orcid: "https://orcid.org/0000-0002-XXXX-XXXX"
+
+repository-code: "https://github.com/babalolaseyip/ml-bioacoustics-signal-processing"
+
+keywords:
+  - bioacoustics
+  - signal processing
+  - machine learning
+  - whale vocalization detection
+  - multiscale entropy
+  - wavelet transform
+  - hidden Markov models
+  - Gaussian mixture models
+  - time-series analysis
+
+references:
+  - type: article
+    authors:
+      - family-names: Babalola
+        given-names: Oluwaseyi Paul
+      - family-names: Ogundile
+        given-names: Oladimeji
+      - family-names: Balyan
+        given-names: Vipin
+    title: "Multiscale Sample Entropy-Based Feature Extraction with Gaussian Mixture Model for Detection and Classification of Blue Whale Vocalization"
+    journal: "Entropy"
+    volume: 27
+    issue: 4
+    pages: 355
+    year: 2025
+    doi: "10.3390/e27040355"
+
+  - type: article
+    authors:
+      - family-names: Babalola
+        given-names: Oluwaseyi Paul
+      - family-names: Versfeld
+        given-names: Daniel J.
+    title: "Wavelet-based feature extraction with hidden Markov model classification of Antarctic blue whale sounds"
+    journal: "Ecological Informatics"
+    volume: 82
+    pages: 102468
+    year: 2024
+    doi: "10.1016/j.ecoinf.2024.102468"
