@@ -1,0 +1,91 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-bioacoustics-signal-processing"
+version = "0.1.0"
+description = "Reproducible bioacoustics signal-processing pipelines for blue whale vocalization detection (MSE–GMM, WT–HMM)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+
+authors = [
+  { name = "Oluwaseyi Paul Babalola", email = "babalolaseyip@gmail.com" }
+]
+
+keywords = [
+  "bioacoustics",
+  "signal-processing",
+  "blue-whale",
+  "multiscale-entropy",
+  "wavelet",
+  "gmm",
+  "hmm",
+  "machine-learning"
+]
+
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Signal Processing"
+]
+
+dependencies = [
+  "numpy>=1.23",
+  "scipy>=1.10",
+  "matplotlib>=3.7",
+  "librosa>=0.10",
+  "scikit-learn>=1.3",
+  "pandas>=2.0"
+]
+
+[project.optional-dependencies]
+wt_hmm = [
+  "pywavelets>=1.5",
+  "hmmlearn>=0.3.2"
+]
+
+dev = [
+  "pytest>=7.4",
+  "ruff>=0.5",
+  "mypy>=1.8",
+  "build>=1.2",
+  "twine>=5.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/babalolaseyip/ml-bioacoustics-signal-processing"
+Repository = "https://github.com/babalolaseyip/ml-bioacoustics-signal-processing"
+Issues = "https://github.com/babalolaseyip/ml-bioacoustics-signal-processing/issues"
+Paper-Entropy-2025 = "https://doi.org/10.3390/e27040355"
+Paper-EcoInf-2024 = "https://doi.org/10.1016/j.ecoinf.2024.102468"
+
+[project.scripts]
+ml-bioacoustics = "ml_bioacoustics.pipeline:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
