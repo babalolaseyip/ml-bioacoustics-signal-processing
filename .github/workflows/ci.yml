@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e .
+      
+      - name: Lint (compile check)
+        run: |
+          python -m compileall src/ml_bioacoustics
+      
+      - name: Run unit tests
+        run: |
+          pytest -v tests/
+      
+      - name: Synthetic pipeline smoke test (MSE-GMM)
+        run: |
+          python -m ml_bioacoustics.pipeline --mode synthetic --method mse-gmm --out results_ci
+      
+      - name: Synthetic pipeline smoke test (WT-HMM)
+        run: |
+          python -m ml_bioacoustics.pipeline --mode synthetic --method wt-hmm --out results_ci_wt
+      
+      - name: Upload CI artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bioacoustics-artifacts
+          path: |
+            results_ci/
+            results_ci_wt/
+          retention-days: 7
