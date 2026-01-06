@@ -34,9 +34,9 @@ This repository is designed as a **research-to-production portfolio**, demonstra
 
 ---
 
-## 📌 Implemented Research Methods
+## Implemented Research Methods
 
-### Multiscale Sample Entropy + Gaussian Mixture Model (MSE–GMM)
+### 1. Multiscale Sample Entropy + Gaussian Mixture Model (MSE–GMM)
 
 **Paper**  
 > Babalola, O. P., Ogundile, O., & Balyan V. (2025).  
@@ -52,7 +52,7 @@ This repository is designed as a **research-to-production portfolio**, demonstra
 
 ---
 
-### 2️⃣ Wavelet Transform + Hidden Markov Model (WT–HMM)
+### 2. Wavelet Transform + Hidden Markov Model (WT–HMM)
 
 **Paper**  
 > Babalola, O. P., & Versfeld, D. J. (2024).  
